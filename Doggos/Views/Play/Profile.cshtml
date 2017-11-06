@@ -1,0 +1,32 @@
+﻿@model List<Doggos.userinfo>
+
+@{
+    Layout = "~/Views/Shared/SharedViewLoggedIn.cshtml";
+}
+<!-- Sidan som visas på profilsidan -->
+
+    <div class="carousel fade-carousel slide" id="bs-carousel">
+        <div class="item slides active">
+            <div class="slide-spel"></div>
+            <div class="hero">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-12 col-lg-10">
+                            <h1>Min profil</h1>
+                            @foreach (var user in Model)
+                            {
+                            <br />
+                            <h3>@Html.DisplayFor(userModel => user.uid)</h3>
+                            <br />
+                            <h4>@Html.DisplayFor(userModel => user.email)</h4>
+                            <br />
+                            <a href='@Url.Action("Delete", "Play", new {id=user.Id})' class='btn btn-primary'>Radera konto</a>
+                            <a href='@Url.Action("Edit", "Play", new {id=user.Id})' class='btn btn-primary'>Redigera profil</a>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+

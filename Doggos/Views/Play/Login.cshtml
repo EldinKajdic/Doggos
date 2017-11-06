@@ -1,0 +1,39 @@
+﻿@model Doggos.Models.UserClass
+
+@{
+    Layout = "~/Views/Shared/SharedView.cshtml";
+}
+<!-- Sidan som visas på profilsidan -->
+
+@Html.Partial("Navbar2")
+
+<div class="carousel fade-carousel slide" id="bs-carousel">
+    <div class="item slides active">
+        <div class="slide-spel"></div>
+        <div class="hero">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-12 col-lg-10">
+                        <h2>Logga in</h2>
+                        @using (Html.BeginForm())
+                        {
+                            <div>
+                                <br />
+                                <h4>Användarnamn:</h4>
+                                <span style="color: black;">@Html.TextBoxFor(n => n.uid)</span>
+                                <br />
+                                <br /><h4>Lösenord:</h4>
+                                <span style="color: black;">@Html.PasswordFor(n => n.pwd)</span>
+                                <br />
+                                    <span style="color: red; font-size: 16px;">@Html.ValidationSummary()</span>
+                                <input type="submit" class="btn btn-primary" value="Logga in" />
+
+                            </div>
+                        }
+                        <a href='@Url.Action("Index", "Play")' class='btn btn-primary'>Tillbaka</a><br><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

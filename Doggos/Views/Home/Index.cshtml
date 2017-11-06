@@ -1,0 +1,333 @@
+﻿
+@{
+    Layout = "~/Views/Shared/SharedView.cshtml";
+}
+
+<!-- Navbar som visas på startsidan -->
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <!-- Kollapsar vid mobil/ipad användning -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Aktivera navigering</span> Meny <i class="fa fa-bars"></i> <!-- Vid screenread -->
+            </button>
+            <a class="navbar-brand page-scroll" href="#page-top">Doggos.se</a> <!-- Brand-texten åt vänster -->
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <!-- Vid kollapsad navbar -->
+            <div class="col-sm-3 col-md-3">
+                <form class="navbar-form" role="search" data-ng-app="ui.bootstrap.demo" method="get">
+                    <!-- Sökfunktionen -->
+                    <div class="input-group typeahead-demo" data-ng-controller="TypeaheadCtrl">
+                        <!-- Sökfunktionen -->
+                        <!-- Input-rutan för sökfunktionen med attribut -->
+                        <input type="text" autocomplete="off" data-ng-model="selected" data-uib-typeahead="dog for dog in dogs | filter:$viewValue | limitTo:8" class="form-control" placeholder="Sök efter hundar..." name="q">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button> <!-- Knappen för att söka -->
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Navbar-högra delen -->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="page-scroll" href="#features">Om Applikationen</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#aboutus">Om oss</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#features2">Spela</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#contact2">Kontakta oss</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<section id="features" class="features">
+    <!-- Features sektion -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="section-heading">
+                    <h2>Obegränsade svep, obegränsad söthet!</h2>
+                    <p class="text-muted">Svep från morgon till kväll eller från kväll till morgon. Du bestämmer!</p>
+                    <hr>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="device-container">
+                    <div class="device-mockup iphone6_plus portrait white">
+                        <div class="device">
+                            <div class="screen">
+                                <!-- Mockup på iphone med framtida applikation -->
+                                <img src="~/img/dogscreen-tindr.jpg" class="img-responsive" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="feature-item">
+                                <i class="icon-screen-smartphone text-primary"></i> <!-- Smartphone ikon -->
+                                <h3>Anpassad för allt</h3>
+                                <p class="text-muted">Doggo är tillgänglig för alla enheter!</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="feature-item">
+                                <i class="icon-camera text-primary"></i> <!-- Kamera ikon -->
+                                <h3>Dela bilder</h3>
+                                <p class="text-muted">Ladda upp bilder på din egna hund!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="feature-item">
+                                <i class="icon-present text-primary"></i> <!-- Present-ikon -->
+                                <h3>Presenter till din hund</h3>
+                                <p class="text-muted">Samla poäng och få exklusiva priser till din hund!</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="feature-item">
+                                <i class="icon-lock-open text-primary"></i> <!-- Lås-ikon -->
+                                <h3>Säkert</h3>
+                                <p class="text-muted">Applikationen är säker och ingen kan kopiera dina bilder!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Om oss delen -->
+<div id="aboutus">
+    <section class="cta">
+        <div class="cta-content">
+            <div class="container">
+                <h2>Din hund.<br>Vår app.</h2>
+                <a href="#rightPic" id="leftPic" class="btn btn-outline btn-xl page-scroll">Läs mer om oss</a> <!-- Knapp som startar jQuery funktion -->
+            </div>
+        </div>
+        <div class="overlay"></div>
+    </section>
+
+
+    <section class="cta2" hidden="hidden">
+        <!-- Sidan som visas efter knapptryck -->
+        <div class="cta-content">
+            <div id="infoID" class="container">
+                <h2>Vi är Doggo</h2>
+                <p style="color: white;">Hunden har under flera århundraden varit människans bästa vän. Det finns ingen annan som kan få upp ditt humör som din lilla glädjespridare. Det var därför vi kom fram med idén till en applikation där du får se på hundratals hundar och bestämma söthetsnivån på dessa. Organisationen är en ideell organisation som syftar efter målet att skapa lycka i världen och uppmärksamma de positiva faktorerna som framkommer genom att skaffa hund. I dagsläget finns det över 6000 vilda hundar som bor i slummen och detta ska vi genom applikationen försöka motverka.</p>
+                <p style="color: white;">Idén bakom vår applikation är att framhäva de underbara djurens liv. Genom att belysa glädjefyllda moment i hundarnas liv ser vi till att få bort de negativa tankarna. Hundar är lösningen till världens problem. Genom denna webbsida kommer du att kunna få se andras glädjespridare och få ladda upp bilder på din egna hund. Denna sida är perfekt för dig som känner dig stressad, depprimerad eller allmänt olycklig och behöver finna lugn och ro.</p>
+                <p style="color: white;">Hundar är mycket empatiska djur som mest av allt reagerar på människans känslor. Det finns forskning som bevisar att hundens hormoner kan komma att förändras när dens husse är stressad. En hund märker av din stressnivå, och kan hjälpa till att sänka den. Det är viktigt att varje hund får den uppmärksamhet den förtjänar. För dig är hunden med en stor del av ditt liv, men för hunden är du hela dens liv. </p> <p style="color: white;">
+                    Grundaren av Doggo &copy; är Eldin Kajdic, en student på
+                    <a style="text-decoration: underline;" href="" data-toggle="modal" data-target="#mapPopup">Högskolan Väst</a>. <!-- Öppnar Google Maps API i en modal -->
+                    Han har under flera år drivit det lyckade bolaget Doggo AB och har redan efter tre år expanderat till över 40 länder. All vinst går till välgörenhet för att rädda hemlösa hundar från att möta sitt öde för tidigt. Nu får DU en chans att vara med och påverka!
+                </p>
+                <a href="#features" id="rightPic" class="btn btn-outline btn-xl page-scroll">Tillbaka</a> <!-- Stänger bilden och visar föregående bild -->
+            </div>
+        </div>
+        <div class="overlay"></div>
+    </section>
+</div>
+
+<!-- Sektion för att spela -->
+<section id="features2" class="features">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="section-heading">
+                    <h2>Redo att sätta igång?</h2>
+                    <p class="text-muted">Tryck på knappen nedan!</p>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="feature-item">
+                            <i class="icon-screen-smartphone text-primary"></i> <!-- Smartphone ikon -->
+                            <br>
+                            <br>
+                            <a href="~/play" class="btn btn-primary btn-lg btn-block">Börja spela!</a> <!-- Knapp till play.php -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12 text-center">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 style="text-align:center;">'<span class="glyphicon glyphicon-globe"></span>'</h2> <!-- Planet ikon -->
+                    <p class="text-muted" style="text-align: center;"> Vi ser fram emot att få se dig och din hund!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+</section>
+
+<!-- Kontakta oss socialamedier (twitter, google, fb) include -->
+<section id="contact" class="contact bg-primary">
+    <div class="container">
+        <h2>Vi <i class="fa fa-heart"></i> söta hundar!</h2>
+        <h3>Vi finns på Twitter, Facebook och Google Plus!</h3>
+        <ul class="list-inline list-social">
+            <li class="social-twitter">
+                <a href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter"></i></a> <!-- Ikon för twitter med länk -->
+            </li>
+            <li class="social-facebook">
+                <a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook"></i></a> <!-- Ikon för facebook med länk -->
+            </li>
+            <li class="social-google-plus">
+                <a href="https://www.google.com" target="_blank"><i class="fa fa-google-plus"></i></a> <!-- Ikon för google+ med länk -->
+            </li>
+        </ul>
+    </div>
+</section>
+
+
+   <!-- Hund-tass-kontakt funktionen på kontaktformen -->
+<div class="col-md-4 col-md-offset-4" id="dogcontactID">
+    <div class="material-button-anim">
+        <br>
+        <ul class="list-inline" id="options">
+            <li class="option">
+                <button class="material-button option1" type="button">
+                    <!-- Knapp som kan länkas till något -->
+                    <span class="fa fa-phone" aria-hidden="true"></span> <!-- Telefon-ikon -->
+                </button>
+            </li>
+            <li class="option">
+                <button class="material-button option2" type="button">
+                    <!-- Knapp som kan länkas till något -->
+                    <span class="fa fa-envelope-o" aria-hidden="true"></span> <!-- Brev-ikon -->
+                </button>
+            </li>
+            <li class="option">
+                <button class="material-button option3" type="button">
+                    <!-- Knapp som kan länkas till något -->
+                    <span class="fa fa-pencil" aria-hidden="true"></span> <!-- Penna-ikon -->
+                </button>
+            </li>
+        </ul>
+        <button class="material-button material-button-toggle" type="button">
+            <!-- Knapp för att expandera tassen -->
+            <span class="fa fa-plus" aria-hidden="true"></span> <!-- Plus-ikon -->
+        </button>
+    </div>
+</div>
+    <!-- Kontaktformuläret -->
+<section id="contact2">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <!-- Rubrik för sektionen -->
+                <h2 class="section-heading">Kontakta oss</h2>
+                <h3 class="section-subheading text-muted">Du kan enkelt nå oss genom att skicka ett meddelande</h3>
+                <br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <form name="sentMessage" id="contactForm" novalidate>
+                    <!-- Form för kontaktformuläret med validering -->
+                    <!-- Placeholder syns i rutan och data-validation-required-message är vad som visas vid felinmatning -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <!-- Inmatningsruta för telefonnummer -->
+                                <input type="text" class="form-control" placeholder="Ditt namn *" id="name" required data-validation-required-message="<span style='color:red'>Vänligen fyll i ett namn.</span>">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group">
+                                <!-- Inmatningsruta för email -->
+                                <input type="email" class="form-control" placeholder="Din mail *" id="email" required data-validation-required-message="<span style='color:red'>Vänligen fyll in en mailadress.</span>">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group">
+                                <!-- Inmatningsruta för telefonnummer -->
+                                <input type="tel" class="form-control" placeholder="Ditt telefonnummer *" id="phone" required data-validation-required-message="<span style='color:red'>Vänligen fyll in ditt telefonnummer.</span>">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <!-- Inmatningsruta för meddelandet -->
+                                <textarea class="form-control" style="resize:none;" placeholder="Ditt meddelande *" rows="8" id="message" required data-validation-required-message="<span style='color:red'>Vänligen skriv in ditt meddelande.</span>"></textarea>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div> <!-- Rensar inmatningsrutorna efter submit -->
+                        <div class="col-lg-12 text-center">
+                            <div id="success"></div>
+                            <button type="submit" class="btn btn-xl">Skicka meddelande</button> <!-- Submit som sänder emailen -->
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer include för copyright -->
+<footer>
+    <div class="container">
+        <p>&copy; 2016 Doggos.se - All Rights Reserved.</p>
+        <ul class="list-inline">
+            <li>
+                <a href="#">Privacy</a>
+            </li>
+            <li>
+                <a href="#">Terms</a>
+            </li>
+            <li>
+                <a href="#">FAQ</a>
+            </li>
+        </ul>
+    </div>
+</footer>
+
+<!-- Modal som visar upp Google Maps API genom jQuery och Ajax -->
+<div class="container" id="mapsID">
+    <div class="modal fade" id="mapPopup">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Header -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="modal-title">Högskolan Väst, Trollhättan</h2>
+                </div>
+                <!-- Kroppen -->
+                <div class="modal-body">
+                    <!-- Maps frame från google med specifikationer -->
+                    <iframe height="450" style="border:0; width: 100%;" src="https://www.google.com/maps/embed/v1/streetview?location=58.2825%2C12.2931&key=AIzaSyA3_bTgAx3DrB3nUMXaIWCt2Q3lfEnR6WI" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

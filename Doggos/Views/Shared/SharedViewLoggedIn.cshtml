@@ -1,0 +1,134 @@
+﻿<html>
+<head>
+    <!-- Meta-taggar för head -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Ladda upp bilder på din hund och gå med i Doggo!">
+    <meta name="author" content="Eldin Kajdic">
+
+    <!-- Website icon -->
+    <link rel="icon" href="~/img/dicon5.png">
+
+    <!-- Website title -->
+    <title>Doggos.se - Vi älskar din hund!</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="~/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Script för byta bild -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="~/js/bytagrejerJS.js"></script>
+
+    <!-- Script för angular.js funktioner -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-sanitize.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.1.4.js"></script>
+    <script src="~/js/searchdog.js"></script>
+
+    <!-- Egna fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="~/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/vendor/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="~/vendor/device-mockups/device-mockups.min.css">
+
+    <!-- CSS-temat -->
+    <link href="~/new-age.min.css" rel="stylesheet" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!--
+    Webbsidan har använt temat New-Age från startbootstrap.com som huvudinspiriation.
+    Många delar av webbsidans startsida samt css filer är tagna från detta tema för att fylla tomhet.
+    https://startbootstrap.com/template-overviews/new-age/
+
+    Förutom detta är vissa funktioner gratis-snippets som hämtats på bootsnipp.com
+     -->
+
+
+</head>
+<body id="page-top">
+
+    <div>
+        <!-- Navbar som visas på play-sidan inloggad -->
+        <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <!-- Kollapsar vid mobil/ipad användning -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Aktivera navigering</span> Meny <i class="fa fa-bars"></i> <!-- Vid screenread -->
+                    </button>
+                    <a class="navbar-brand page-scroll" href="~/home">Doggos.se</a> <!-- Brand-texten åt vänster -->
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <!-- Vid kollapsad navbar -->
+                    <div class="col-sm-3 col-md-3">
+                        <form class="navbar-form" role="search" data-ng-app="ui.bootstrap.demo" method="get">
+                            <!-- Sökfunktionen -->
+                            <div class="input-group typeahead-demo" data-ng-controller="TypeaheadCtrl">
+                                <!-- Sökfunktionen -->
+                                <!-- Input-rutan för sökfunktionen med attribut -->
+                                <input type="text" autocomplete="off" data-ng-model="selected" data-uib-typeahead="dog for dog in dogs | filter:$viewValue | limitTo:8" class="form-control" placeholder="Sök efter hundar..." name="q">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button> <!-- Knappen för att söka -->
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Navbar-högra delen -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a class="page-scroll" href="#">Senaste</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href='@Url.Action("Profile", "Play")'>Min profil</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#">Spela</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href='@Url.Action("LogOut")'>Logga ut</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+
+        @RenderBody()
+    </div>
+
+    <!-- jQuery -->
+    <script src="~/vendor/jquery/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="~/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="~/js/new-age.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="~/js/jqBootstrapValidation.js"></script>
+    <script src="~/js/contact_me.js"></script>
+
+
+</body>
+
+</html>

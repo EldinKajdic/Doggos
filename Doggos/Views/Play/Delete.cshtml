@@ -1,0 +1,30 @@
+﻿@model Doggos.userinfo
+
+@{
+    Layout = "~/Views/Shared/SharedViewLoggedIn.cshtml";
+}
+<!-- Sidan som visas på profilsidan -->
+
+<div class="carousel fade-carousel slide" id="bs-carousel">
+    <div class="item slides active">
+        <div class="slide-spel"></div>
+        <div class="hero">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-12 col-lg-10">
+                        <h1>Radera konto</h1>
+                        <br />
+                        <h3>Vill du verkligen ta bort användaren @Html.DisplayFor(user => Model.uid)?</h3>
+                        <br />
+
+                        @using (Html.BeginForm())
+                        {
+                            <input type="submit" class="btn btn-primary" value="Radera" />
+                        }
+                        <a href='@Url.Action("Profile", "Play")' class='btn btn-primary'>Tillbaka till min profil</a><br><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

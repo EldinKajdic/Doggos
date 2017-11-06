@@ -1,0 +1,26 @@
+﻿@{
+    Layout = "~/Views/Shared/SharedView.cshtml";
+}
+
+@Html.Partial("Navbar2")
+
+<!-- Sidan som visas på playView -->
+
+<div class="carousel fade-carousel slide" id="bs-carousel">
+    <!-- Hund-bakgrund -->
+    <div class="carousel-inner2">
+        <div class="item slides active">
+            <div class="slide-spel"></div>
+            <!-- Sidan som visas på playView om användaren är utloggad -->
+            <div class="hero">
+                <div class="overlay"></div>
+                <h1>Spela Doggo</h1>
+                <a href='@Url.Action("Register", "Play")' style="width: 230px;" class="btn btn-outline btn-xl page-scroll">Registrera konto</a> <!-- Kallar på register-modal -->
+                <a href='@Url.Action("Login", "Play")' style="width: 230px; text-align: center;" id="bID2" class="btn btn-outline btn-xl page-scroll">Logga in</a> <!-- Kallar på login-modal -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

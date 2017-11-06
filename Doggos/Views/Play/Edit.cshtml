@@ -1,0 +1,39 @@
+﻿@model Doggos.userinfo
+
+@{
+    Layout = "~/Views/Shared/SharedViewLoggedIn.cshtml";
+}
+<!-- Sidan som visas på profilsidan -->
+
+<div class="carousel fade-carousel slide" id="bs-carousel">
+    <div class="item slides active">
+        <div class="slide-spel"></div>
+        <div class="hero">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-12 col-lg-10">
+                        <h2>Redigera konto</h2>
+                        @using (Html.BeginForm())
+                        {
+                            <div>
+                                <br />
+                                <h4>Användarnamn:</h4><br />
+                                <span style="color: black;">@Html.EditorFor(m => Model.uid)</span>
+                                <br />
+                                <br /><h4>Lösenord:</h4>
+                                <span style="color: black;">@Html.PasswordFor(m => Model.pwd)</span>
+                                <br />
+                                <br /><h4>Email:</h4>
+                                <span style="color: black;">@Html.EditorFor(m => Model.email)</span>
+                                <br /><br />
+                                <input type="submit" class="btn btn-primary" value="Spara ändringar" />
+                            </div>
+                        }
+
+                        <a href='@Url.Action("Profile", "Play")' class='btn btn-primary'>Tillbaka till min profil</a><br><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
